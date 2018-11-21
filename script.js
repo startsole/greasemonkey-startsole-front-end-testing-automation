@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StartSOLE Example Lesson
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Fill out a StartSOLE lesson plan on the web app
 // @author       Drew
 // @match        *://app.startsole.org/sole-create*
