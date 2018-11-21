@@ -4,7 +4,8 @@
 // @version      0.1
 // @description  Fill out a StartSOLE lesson plan on the web app
 // @author       Drew
-// @match        *://*startsole.org/*
+// @match        *://app.startsole.org/sole-create*
+// @match        *://app.staging.startsole.org/sole-create*
 // @match        *://localhost:8080/sole-create*
 // @grant        none
 // ==/UserScript==
