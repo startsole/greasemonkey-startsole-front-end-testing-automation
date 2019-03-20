@@ -5,7 +5,8 @@ These are greasemonkey scripts to make testing the StartSOLE webapp faster and e
 
  * `greasemonkey-prefill-new-sole-lesson.js` - gives a popup on the Plan a Lesson page to prefill the content.
  * `greasemonkey-prefill-sole-reflection.js` - popup on the reflection page for a given sole lesson to prefill content.
-
+ * `greasemonkey-auto-login.js` - popup on the login page to autocomplete your login
+ * `greasemonkey-show-sessionToken.js` - add a popup to every page to show the current sessionToken.
 
 # How do I install these?
 
