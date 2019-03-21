@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show cookie as a popup on any StartSOLE page
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Show sessionToken for a startSole session
 // @author       Drew
 // @match        *://localhost:8080/*
@@ -13,20 +13,22 @@
 (function() {
     'use strict';
 
-    //show cookie:
-    var sessionToken = document.cookie.split(';').filter(function(item) {
-        return item.trim().indexOf('sessionToken=') == 0
-    })[0].slice(14);
-    var toastHTML = "<span>";
-    if (sessionToken === "") {
+    var toastHTML2 = "<span>";
+
+    if (!document.cookie) {
         //no token defined, so output this
-        toastHTML += 'You are currently logged out. No sessionToken currently defined.';
+        toastHTML2 += 'You are currently logged out. No sessionToken currently defined.';
     } else {
+        var sessionToken = document.cookie.split(';').filter(function(item) {
+            return item.trim().indexOf('sessionToken=') == 0
+        })[0];
         //token is defined, so output it
-        toastHTML += 'Your current sessionToken from the cookie is ' + sessionToken;
+            //show cookie:
+
+        toastHTML2 += 'Your current sessionToken from the cookie is ' + sessionToken;
     }
 
-    toastHTML += '</span>';
-    toastHTML += '<button class="btn-flat toast-action" onClick="M.Toast.dismissAll();">Dismiss all</button>';
-    M.toast({html: toastHTML, displayLength: 10000});
+    toastHTML2 += '</span>';
+    toastHTML2 += '<button class="btn-flat toast-action" onClick="M.Toast.dismissAll();">Dismiss all</button>';
+    M.toast({html: toastHTML2, displayLength: 10000});
 })();
