@@ -47,8 +47,8 @@
 $("#admin-panel").submit(function (event) {
     event.preventDefault();
     //update cookie with data from form
-    var sessionTokenNew = $('#sessionToken').val();
-    var language = $('#language').val();
+    var sessionTokenNew = $('#admin-panel-sessionToken').val();
+    var language = $('#admin-panel-language').val();
 
     document.cookie = 'sessionToken=; Max-Age=0';//remove the sessionToken from the cookie
     document.cookie = 'sessionToken='+sessionTokenNew; //save the sessionToken in the cookie
