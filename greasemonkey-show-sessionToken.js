@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StartSOLE Debugger
 // @namespace    http://StartSOLE.org
-// @version      1.1
+// @version      1.0
 // @description  Show/edit session token in cookie
 // @author       Drew
 // @match        *://localhost:8080/*
@@ -34,12 +34,12 @@
 
     }
 
-    var adminPanelHtml = '<div id="admin-panel" style="background: #ddd; z-index: 9999; position: fixed; top: 150px;right: 0;width: 350px; min-height: 100px; padding: 15px; border-radius: 5px;" class="center">ADMIN PANEL <hr> <form class="row"> <div class="input-field col s12"> <input id="sessionToken" type="text" placeholder="no session token" value="no sessionToken"> <label for="sessionToken" class="active">session token</label> </div> <div class="input-field col s12"> <select id="language"> <option value="" disabled selected>Choose your language</option> <option value="en">English</option> <option value="es">Spanish (Colombia)</option> </select> <label for="language">Language</label> </div> <button type="submit" class="btn">Update Cookie</button> </form> <a id="admin-panel-hide-button" href="#" style="font-size: .75em">hide</a> </div>';
+    var adminPanelHtml = '<div id="admin-panel" style="background: #ddd; z-index: 9999; position: fixed; top: 150px;right: 0;width: 350px; min-height: 100px; padding: 15px; border-radius: 5px;" class="center">ADMIN PANEL <hr> <form class="row"> <div class="input-field col s12"> <input id="admin-panel-sessionToken" type="text" placeholder="no session token" value="no sessionToken"> <label for="admin-panel-sessionToken" class="active">session token</label> </div> <div class="input-field col s12"> <select id="admin-panel-language"> <option value="" disabled selected>Choose your language</option> <option value="en">English</option> <option value="es">Spanish (Colombia)</option> </select> <label for="admin-panel-language">Language</label> </div> <button type="submit" class="btn">Update Cookie</button> </form> <a id="admin-panel-hide-button" href="#" style="font-size: .75em">hide</a> </div>';
     var adminElement = document.createElement('div');
     adminElement.innerHTML = adminPanelHtml;
     document.body.append(adminElement);
-    $('#sessionToken').val(sessionToken); //add sessionToken to admin panel from cookie
-    $('#language').val(language); //add language to admin panel from cookie
+    $('#admin-panel-sessionToken').val(sessionToken); //add sessionToken to admin panel from cookie
+    $('#admin-panel-language').val(language); //add language to admin panel from cookie
     //initiliaze dropdown
     $(document).ready(function(){
         $('select').formSelect();
