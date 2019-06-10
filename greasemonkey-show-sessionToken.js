@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         StartSOLE Debugger
 // @namespace    http://StartSOLE.org
-// @version      1.0
+// @version      1.1
 // @description  Show/edit session token in cookie
 // @author       Drew
 // @match        *://localhost:8080/*
