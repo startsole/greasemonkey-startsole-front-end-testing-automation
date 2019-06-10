@@ -6,6 +6,7 @@
 // @author       Drew
 // @match        *://localhost:8080/*
 // @match        *://app.startsole.org/*
+// @match        *://app.startsole.org/*/login
 // @match        *://app.staging.startsole.org/*
 // @grant        none
 // ==/UserScript==
@@ -50,10 +51,10 @@ $("#admin-panel").submit(function (event) {
     var sessionTokenNew = $('#admin-panel-sessionToken').val();
     var language = $('#admin-panel-language').val();
 
-    document.cookie = 'sessionToken=; Max-Age=0';//remove the sessionToken from the cookie
-    document.cookie = 'sessionToken='+sessionTokenNew; //save the sessionToken in the cookie
-    document.cookie = 'language=; Max-Age=0';//remove the language from the cookie
-    document.cookie = 'language='+language; //save the language in the cookie
+    document.cookie = 'sessionToken=; Max-Age=0;path=/';//remove the sessionToken from the cookie
+    document.cookie = 'sessionToken='+sessionTokenNew+'path=/'; //save the sessionToken in the cookie
+    document.cookie = 'language=; Max-Age=0;path=/';//remove the language from the cookie
+    document.cookie = 'language='+language + 'path=/'; //save the language in the cookie
     location.reload();
   });
   $("#admin-panel-hide-button").click(function (event) {
